@@ -11,20 +11,26 @@ body{
 }
 header {
     background: #182C61;
-    width: 100%;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     -webkit-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     z-index: 99;
     min-height: 60px;
-    font-size: 30px;
-    font-weight: bolder;
+    padding: 0 20px;
 }
 
+header > a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+header > a:active {
+  color: #dbdbdb;
+}
 .main > h2 {
     padding: 10px;
     text-align: center;
@@ -218,6 +224,8 @@ canvas{
 .site-header {
     color: white;
     text-decoration: none;
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 .content {
@@ -237,6 +245,9 @@ canvas{
     justify-content: center;
     flex-wrap: wrap;
 }
+footer > a{
+  margin: 0 10px;
+}
 /*Mobile CSS*/
 
 @media only screen and (max-width: 900px) {
@@ -248,3 +259,4 @@ canvas{
         width: 100%;
     }
 }
+
