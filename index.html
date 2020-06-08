@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Txtify - Extract text from Image, Convert Image to Text</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header >
+    <a href="/" class="site-header">Txtify</a>
+  </header>
+  <div class="main">
+    <h2>Convert Your images into text</h2>
+    <img class="illust" src="images/illustration.svg" alt="Txtify - Extract text from Image">
+    <div class="main-wrapper">
+      <select id="langsel">
+        <option value='afr'     > Afrikaans             </option>
+        <option value='ara'     > Arabic                </option>
+        <option value='aze'     > Azerbaijani           </option>
+        <option value='bel'     > Belarusian            </option>
+        <option value='ben'     > Bengali               </option>
+        <option value='bul'     > Bulgarian             </option>
+        <option value='cat'     > Catalan               </option>
+        <option value='ces'     > Czech                 </option>
+        <option value='chi_sim' > Chinese               </option>
+        <option value='chi_tra' > Traditional Chinese   </option>
+        <option value='chr'     > Cherokee              </option>
+        <option value='dan'     > Danish                </option>
+        <option value='deu'     > German                </option>
+        <option value='ell'     > Greek                 </option>
+        <option value='eng'     selected> English       </option>
+        <option value='enm'     > English (Old)         </option>
+        <option value='meme'    > Internet Meme         </option>
+        <option value='epo'     > Esperanto             </option>
+        <option value='epo_alt' > Esperanto alternative </option>
+        <option value='equ'     > Math                  </option>
+        <option value='est'     > Estonian              </option>
+        <option value='eus'     > Basque                </option>
+        <option value='fin'     > Finnish               </option>
+        <option value='fra'     > French                </option>
+        <option value='frk'     > Frankish              </option>
+        <option value='frm'     > French (Old)          </option>
+        <option value='glg'     > Galician              </option>
+        <option value='grc'     > Ancient Greek         </option>
+        <option value='heb'     > Hebrew                </option>
+        <option value='hin'     > Hindi                 </option>
+        <option value='hrv'     > Croatian              </option>
+        <option value='hun'     > Hungarian             </option>
+        <option value='ind'     > Indonesian            </option>
+        <option value='isl'     > Icelandic             </option>
+        <option value='ita'     > Italian               </option>
+        <option value='ita_old' > Italian (Old)         </option>
+        <option value='jpn'     > Japanese              </option>
+        <option value='kan'     > Kannada               </option>
+        <option value='kor'     > Korean                </option>
+        <option value='lav'     > Latvian               </option>
+        <option value='lit'     > Lithuanian            </option>
+        <option value='mal'     > Malayalam             </option>
+        <option value='mkd'     > Macedonian            </option>
+        <option value='mlt'     > Maltese               </option>
+        <option value='msa'     > Malay                 </option>
+        <option value='nld'     > Dutch                 </option>
+        <option value='nor'     > Norwegian             </option>
+        <option value='pol'     > Polish                </option>
+        <option value='por'     > Portuguese            </option>
+        <option value='ron'     > Romanian              </option>
+        <option value='rus'     > Russian               </option>
+        <option value='slk'     > Slovakian             </option>
+        <option value='slv'     > Slovenian             </option>
+        <option value='spa'     > Spanish               </option>
+        <option value='spa_old' > Old Spanish           </option>
+        <option value='sqi'     > Albanian              </option>
+        <option value='srp'     > Serbian (Latin)       </option>
+        <option value='swa'     > Swahili               </option>
+        <option value='swe'     > Swedish               </option>
+        <option value='tam'     > Tamil                 </option>
+        <option value='tel'     > Telugu                </option>
+        <option value='tgl'     > Tagalog               </option>
+        <option value='tha'     > Thai                  </option>
+        <option value='tur'     > Turkish               </option>
+        <option value='ukr'     > Ukrainian             </option>
+        <option value='vie'     > Vietnamese            </option>
+      </select>
+      <input type="file" name="file" id="file-1" class="inputfile" accept="image/png, image/jpeg, image/jpg" />
+      <span class="file-span">Choose a file</span>
+      <img id="selected-image"  src="" />
+      <div class="img-display">
+        <p>OPTIONAL: You can Drag to select specific portion that you want to convert.</p>
+        <canvas style="border: 1px white solid;" id="imgCanvas"></canvas>
+        <canvas style="display: none;" id="hiddenCanvas"></canvas>
+      </div>
+      <span class="btn txtifyBtn">Txtify it !</span>
+      <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
+      <div class="result-div">
+        <h3>Your Text Result(tap to copy):</h3>
+        <div class="result-area"></div>
+      </div>
+    </div>
+    <div class="content-container">
+    <section class="content">
+      <h2>How to Convert Image to Text?</h2>
+      <p>Just open Txtify, upload your image via "Choose a file" option. Then your image will be uploaded.
+        You can extract text from the whole image. Or you can also select the desired portion of your image
+        from where you want to extract text. Then click on "Txtify it !" button and wait for the magic. Your result will be displayed. Just tap on the converted text, your text will be copied. Done!
+      </p>
+    </section>
+    <section class="content">
+      <h2>How we extract text from image?</h2>
+      <p>We are using OCR (Optical Character Recognition) in the background for extracting text from images.
+      </p>
+    </section>
+    <section class="content">
+      <h2>Why my result is not accurate?</h2>
+      <p>There are few reasons: <br>
+        1. May be your image is not clear/blurry/low quality.<br>
+        2. Text on your image is not clear.<br>
+        3. Text size on the image is too small.<br>
+        4. There are too much colors in the image. So, OCR failed to recognize.<br><br>
+        REMEMBER: It works great where image has the decent qulaity and dual-colored.
+      </p>
+    </section>
+    </div>
+    <footer id="footer">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <p class="copyright">© Txtify: All rights reserved. 2020<br>Created by: Sk Shoaib</p>
+    </footer>
+  </div>
+  <!-- v2 -->
+  <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+	<script type="text/javascript" src="src/script.js"></script>
+</body>
+</html>

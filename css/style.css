@@ -1,0 +1,250 @@
+body{
+    margin: 0;
+    font-family: Montserrat;
+    color: white;
+    background: #292c31;
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}
+header {
+    background: #182C61;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    min-height: 60px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.main > h2 {
+    padding: 10px;
+    text-align: center;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-width: 300px;
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.file-span {
+    min-width: 250px;
+    background: #1e2024;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.file-span:hover {
+    background: #191a1c;
+}
+.file-span:active {
+    background: #0f0f10;
+}
+.file-span:before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f093';
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin: 0 14px 0px 3px;
+}
+
+select {
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  position: relative;
+  display: flex;
+  min-width: 280px;
+  padding: 15px;
+  background: #2c3e50;
+  overflow: hidden!important;
+  border-radius: 5px;
+  font-size: 16px;
+  flex: 1;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+canvas{
+    cursor: pointer;
+}
+
+.btn {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 5px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.txtifyBtn{
+    background: #0081ff;
+    min-width: 180px;
+}
+.txtifyBtn:hover{
+    background: #106ac3;
+}
+.txtifyBtn:active{
+    background: #175898;
+}
+.result-area {
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+    margin: 15px 0;
+    background: #1d1e21;
+    border: 1px #074e93 solid;
+    cursor: pointer;
+    white-space: pre-wrap;
+    line-height: 1.8em;
+}
+.result-area:hover, .result-area:active{
+    background: #161719;
+}
+.img-display {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.result-div {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.spinner {
+  display: none;
+  margin: 15px 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  -webkit-animation: sk-rotate 2.0s infinite linear;
+  animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: white;
+  border-radius: 100%;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.illust {
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+#footer {
+    width: 100%;
+    text-align: center;
+    line-height: 1.6em;
+    background: #383b43;
+    color: #b5b5b5;
+    padding: 15px 0;
+}
+#footer > a {
+    color: white;
+}
+.site-header {
+    color: white;
+    text-decoration: none;
+}
+
+.content {
+    padding: 15px;
+    border: 1px #134b83 solid;
+    border-radius: 5px;
+    width: 26%;
+    margin: 15px;
+}
+.content > p {
+    line-height: 1.7em;
+    font-size: 16px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/*Mobile CSS*/
+
+@media only screen and (max-width: 900px) {
+    .illust {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .content{
+        width: 100%;
+    }
+}
